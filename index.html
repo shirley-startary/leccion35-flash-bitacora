@@ -10,7 +10,14 @@
      <link rel="stylesheet" href="assets/css/main.css">
      <!--Let browser know website is optimized for mobile-->
      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+     <style media="screen">
+     #mapa{
+       width:400px;
+       height:400px;}
+     </style>
+
   </head>
+
 
   <body>
     <header class="container center">
@@ -24,7 +31,7 @@
       <ul>
         <li><a class="btn cyan accent-3 btn-floating" href="#modalMensaje"><i class="material-icons">chat</i></a></li>
         <li><a class="btn blue accent-2 btn-floating" href="#modalImagen"><i class="material-icons">perm_media</i></a></li>
-        <li><a class="btn green accent-2 btn-floating" href="#"><i class="material-icons">today</i></a></li>
+        <li><a class="btn green accent-2 btn-floating" href="#modalEvento"><i class="material-icons">today</i></a></li>
       </ul>
     </div>
     <section id="tarjetas" class="container">
@@ -77,18 +84,43 @@
           </div>
         </div>
       </div>
+      <div id="modalEvento" class="modal">
+          <div class="modal-content row">
+              <div class="col s12">
+                  <div class="row">
+                      <div class="input-field col s12">
+                          <input type="text" class="validate" data-length="10" id="tituloEvento" />
+                          <label for="first_name">Título</label>
+                      </div>
+                      <div class="input-field col s12">
+                          <input type="date" class="datepicker" id="fechaEvento" placeholder="Fecha del evento">
+                      </div>
+                      <button id="btnPublicarEvento" class="modal-close btn waves-effect waves-light right green accent-2" type="button" name="action" data-publication="event">Publicar
+                          <i class="material-icons right">send</i>
+                      </button>
+                  </div>
+              </div>
+          </div>
+      </div>
 
     </section>
+
+<!-- <button type="button" name="button" onclick="findme();">mostrar posicion</button> -->
+
+<!-- <div id="mapa"></div> -->
 
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="assets/js/materialize.min.js"></script>
     <script type="text/javascript" src="assets/js/app.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7RHw2nToqdiDG493gdmIi2eLwGjHkM5M&callback=initMap" async defer></script>
+
     <script type="text/javascript">
       $(document).ready(function(){
         // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
         $('.modal').modal();
         });
     </script>
+
   </body>
 </html>
