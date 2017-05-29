@@ -23,7 +23,7 @@
       </a>
       <ul>
         <li><a class="btn cyan accent-3 btn-floating" href="#modalMensaje"><i class="material-icons">chat</i></a></li>
-        <li><a class="btn blue accent-2 btn-floating" href="#"><i class="material-icons">perm_media</i></a></li>
+        <li><a class="btn blue accent-2 btn-floating" href="#modalImagen"><i class="material-icons">perm_media</i></a></li>
         <li><a class="btn green accent-2 btn-floating" href="#"><i class="material-icons">today</i></a></li>
       </ul>
     </div>
@@ -31,25 +31,54 @@
 
     </section>
 
-    <div id="modalMensaje" class="modal">
-      <div class="modal-content row">
-        <div class="col s12">
-          <div class="row">
-            <div class="input-field col s12">
+    <section id="modales">
+      <!-- Modal de Tarjetas de Texto -->
+      <div id="modalMensaje" class="modal">
+        <div class="modal-content row">
+          <div class="col s12">
+            <div class="row">
+              <div class="input-field col s12">
                 <input id="tituloDelMensaje" type="text" data-length="20"/>
                 <label for="title">Título</label>
-            </div>
-            <div class="input-field col s12">
+              </div>
+              <div class="input-field col s12">
                 <textarea id="mensajeAPublicar" class="materialize-textarea"></textarea>
                 <label for="message">Mensaje</label>
-            </div>
-            <button  id="publicarMensaje" class="btn waves-effect waves-light right cyan accent-4 modal-close" type="button" name="action" data-publication="text">Publicar
+              </div>
+              <button  id="publicarMensaje" class="btn waves-effect waves-light right cyan accent-4 modal-close" type="button" name="action" data-publication="text">Publicar
                 <i class="material-icons right">send</i>
-            </button>
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      <!-- Modal con Imagen -->
+      <div id="modalImagen" class="modal">
+        <div class="modal-content row">
+          <div class="col s12">
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="tituloImagen" type="text" class="validate" data-length="10" />
+                <label for="title">Título</label>
+              </div>
+              <div class="file-field input-field col s12">
+                <div class="btn">
+                  <span>Imagen</span>
+                  <input type="file" accept="image/*" id="archivoImagen"/>
+                </div>
+                <div class="file-path-wrapper">
+                  <input class="file-path validate" type="text">
+                </div>
+              </div>
+              <button class="modal-close btn waves-effect waves-light right blue accent-2" type="button" id="btnPublicarImagen">Publicar
+                <i class="material-icons right">send</i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
 
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
