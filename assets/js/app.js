@@ -48,3 +48,53 @@ function publicarImagen(elemento) {
   tarjetaConImagen.className = "card-panel";
   textoTitulo.value = "";
 }
+
+
+var btnPublicarEvento = document.getElementById("btnPublicarEvento");
+btnPublicarEvento.addEventListener("click",publicarEvento);
+
+function publicarEvento(){
+
+  var textoTitulo = document.getElementById("tituloEvento").value;
+  var fecha=document.getElementById("fechaEvento").value;
+  console.log(fecha);
+
+  var tituloMapa = document.createElement("h3");
+  tituloMapa.textContent = textoTitulo;
+  var fechaEvento =document.createElement("p");
+  fechaEvento.textContent =fecha;
+  var map = document.createElement("div");
+  var tarjetaConMapa= document.createElement("div");
+
+  tarjetaConMapa.appendChild(tituloMapa);
+  tarjetaConMapa.appendChild(fechaEvento);
+  tarjetaConMapa.appendChild(map);
+  tarjetas.appendChild(tarjetaConMapa);
+}
+
+function initMap(){
+
+
+}
+
+
+function findme(){
+  var output = document.getElementById('mapa');
+  if(navigator.geolocation){
+    navigator.geolocation.getCurrentPosition(localizacion, error);
+    output.innerHTML ="<p>tu navegador soporta geolocalicacion</p>";
+  }else{
+    output.innerHTML ="<p>tu navegador NO soporta geolocalicacion</p>";
+    }
+
+  function localizacion (posicion){
+    var latitude = posicion.coords.latitude;
+    var longitude = posicion.coords.longitude;
+    output.innerHTML ="<p>latitud:"+latitude+"<br/>longitud:"+longitude+"</p>";
+
+  }
+  function error (){
+    output.innerHTML ="<p>No se pudo obtener ubicacion</p>";
+  }
+
+}
