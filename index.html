@@ -10,9 +10,9 @@
      <link rel="stylesheet" href="assets/css/main.css">
      <!--Let browser know website is optimized for mobile-->
      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-   </head>
+  </head>
 
-   <body>
+  <body>
     <header class="container center">
       <h1>Flash Bitácora</h1>
       <p class="flow-text">"Publish anything", just in you browser.</p>
@@ -22,15 +22,44 @@
         <i class="large material-icons">mode_edit</i>
       </a>
       <ul>
-        <li><a class="btn cyan accent-3 btn-floating" href="#"><i class="material-icons">chat</i></a></li>
+        <li><a class="btn cyan accent-3 btn-floating" href="#modalMensaje"><i class="material-icons">chat</i></a></li>
         <li><a class="btn blue accent-2 btn-floating" href="#"><i class="material-icons">perm_media</i></a></li>
         <li><a class="btn green accent-2 btn-floating" href="#"><i class="material-icons">today</i></a></li>
       </ul>
     </div>
+    <section id="tarjetas" class="container">
 
+    </section>
 
-     <!--Import jQuery before materialize.js-->
-     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-     <script type="text/javascript" src="assets/js/materialize.min.js"></script>
-   </body>
+    <div id="modalMensaje" class="modal">
+      <div class="modal-content row">
+        <div class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+                <input id="tituloDelMensaje" type="text" data-length="20"/>
+                <label for="title">Título</label>
+            </div>
+            <div class="input-field col s12">
+                <textarea id="mensajeAPublicar" class="materialize-textarea"></textarea>
+                <label for="message">Mensaje</label>
+            </div>
+            <button  id="publicarMensaje" class="btn waves-effect waves-light right cyan accent-4 modal-close" type="button" name="action" data-publication="text">Publicar
+                <i class="material-icons right">send</i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/materialize.min.js"></script>
+    <script type="text/javascript" src="assets/js/app.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+        $('.modal').modal();
+        });
+    </script>
+  </body>
 </html>
